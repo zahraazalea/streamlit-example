@@ -59,7 +59,7 @@ for name, data in additional_websites.items():
     st.write(data["description"])
 
 # Collect User Feedback
-feedback = st.text_area("Please provide your feedback:")
+feedback = st.text_area("Please provide your feedback on the helpfulness of this website:")
 
 # Perform Sentiment Analysis
 if feedback:
@@ -78,8 +78,7 @@ if feedback:
         st.write("Sentiment: Negative")
     else:
         st.write("Sentiment: Neutral")
-else:
-    st.write("Please provide your feedback.")
+
 
 # # Define image data with descriptions
 # images = [

@@ -62,7 +62,7 @@ elif selected_menu == "Calm Your Nerves":
 # Section: User Feedback and Sentiment Analysis
 else:
     st.header("User Feedback and Sentiment Analysis")
-    feedback = st.text_input("Enter your feedback:")
+    feedback = st.text_input("Enter your feedback on the helpfulness of this website:")
 
     if feedback:
         blob = TextBlob(feedback)

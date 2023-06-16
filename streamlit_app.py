@@ -12,22 +12,23 @@ st.header("Mental Health Support Websites")
 st.markdown("Here are some recommended websites to help with stress and mental health:")
 
 websites = {
-    "The Mighty\n": {
-        "Link": "https://themighty.com/\n",
-        "If you enjoy writing or painting about your personal struggles or revelations, The Mighty accepts your work as well. Simply publish your words or photographs on the site for others to read and comment on. The Mighty is a diverse mental health support website."
+    "The Mighty": {
+        "Link": "https://themighty.com/",
+        "Description": "If you enjoy writing or painting about your personal struggles or revelations, The Mighty accepts your work as well. Simply publish your words or photographs on the site for others to read and comment on. The Mighty is a diverse mental health support website."
     },
-    "Therapy Tribe\n": {
-        "Link": "https://support.therapytribe.com/\n",
-        "Therapy Tribe elevates peer-to-peer mental health support to new heights. Aside from a variety of resources, it provides dedicated domains for a variety of topics, such as anxiety, depression, and more. Therapy Tribe is perfect for someone looking for specific help."
+    "Therapy Tribe": {
+        "Link": "https://support.therapytribe.com/",
+        "Description": "Therapy Tribe elevates peer-to-peer mental health support to new heights. Aside from a variety of resources, it provides dedicated domains for a variety of topics, such as anxiety, depression, and more. Therapy Tribe is perfect for someone looking for specific help."
     },
-    "Calm Sage\n": {
-        "Link": "https://www.calmsage.com/\n",
-        "If you appreciate the notion of sharing your personal tales and meeting people who have had similar experiences, check out Calm Sage. The website is more of an instructional resource than a social hub, but it does accept guest blogs highlighting mental health successes."
+    "Calm Sage": {
+        "Link": "https://www.calmsage.com/",
+        "Description": "If you appreciate the notion of sharing your personal tales and meeting people who have had similar experiences, check out Calm Sage. The website is more of an instructional resource than a social hub, but it does accept guest blogs highlighting mental health successes."
     }
 }
 
-for name, link in websites.items():
-    st.markdown(f"- [{name}]({link})")
+for name, data in websites.items():
+    st.markdown(f"**[{name}]({data['Link']})**")
+    st.write(data["Description"])
 
 # Section: Additional Websites
 st.header("Calm Your Nerves")

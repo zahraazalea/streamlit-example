@@ -8,9 +8,12 @@ st.set_page_config(page_title="Mental Health Support", page_icon=":mortar_board:
 st.title("Covid-19 Endemic Phase Mental Health Support")
 st.markdown("This website provides resources and support for people facing challenges during the Covid-19 endemic phase.")
 
-# Section: Mental Health Support Websites
-st.header("Mental Health Support Websites")
-st.markdown("Here are some recommended websites to help with stress and mental health:")
+additional_link = {
+    "Link": "https://www.who.int/teams/mental-health-and-substance-use/mental-health-and-covid-19",
+    "Description": "Here's some information about mental health and its correlation to Covid-19."
+}
+
+st.markdown(f"**[{additional_link['Description']}]({additional_link['Link']})**")
 
 # Sidebar navigation
 menu = ["Mental Health Support Websites", "Calm Your Nerves", "User Feedback and Sentiment Analysis"]

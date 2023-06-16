@@ -58,27 +58,20 @@ for name, data in additional_websites.items():
     st.markdown(f"**[{name}]({data['link']})**")
     st.write(data["description"])
 
-# Collect User Feedback
-feedback = st.text_area("Please provide your feedback on the helpfulness of this website:")
+# User Feedback and Sentiment Analysis
+st.header("User Feedback and Sentiment Analysis")
+feedback = st.text_input("Enter your feedback:")
 
-# Perform Sentiment Analysis
 if feedback:
-    analysis = TextBlob(feedback)
-    sentiment = analysis.sentiment.polarity
-
-    # Display Sentiment Analysis Results
-    st.write("Sentiment Analysis Results:")
-    st.write(f"Feedback: {feedback}")
-    st.write(f"Sentiment Score: {sentiment:.2f}")
-
-    # Analyze sentiment label
-    if sentiment > 0:
-        st.write("Sentiment: Positive")
-    elif sentiment < 0:
-        st.write("Sentiment: Negative")
-    else:
-        st.write("Sentiment: Neutral")
-
+    blob = TextBlob(feedback)
+    sentiment_score = blob.sentiment.polarity
+    sentiment_label = "Positive" if sentiment_score > 0 else "Negative" if sentiment_score < 0 else "Neutral"
+    
+    st.markdown(f"**Feedback:** {feedback}")
+    st.markdown(f"**Sentiment Score:** {sentiment_score:.2f}")
+    st.markdown(f"**Sentiment:** {sentiment_label}")
+else:
+    st.info("Enter your feedback in the text box above to see the sentiment analysis results.")
 
 # # Define image data with descriptions
 # images = [

@@ -36,11 +36,11 @@ st.markdown("Here are some additional websites that could calm your nerves:")
 additional_websites = {
     "Website 4": {
         "link": "https://thequietplaceproject.xyz/thequietplace",
-        "description": ""The Quiet Place" is a one-of-a-kind online experience that offers a tranquil and calming respite from the noise and stress of regular life. It provides a basic, calm setting in which guests can disengage from technology, decompress, and find a moment of peace. "
+        "description": "The Quiet Place is a one-of-a-kind online experience that offers a tranquil and calming respite from the noise and stress of regular life. It provides a basic, calm setting in which guests can disengage from technology, decompress, and find a moment of peace. "
     },
     "Website 5": {
         "link": "http://weavesilk.com/",
-        "description": ""Weavesilk" is a therapeutic and relaxing digital art platform that offers users a serene and calming experience. It provides a virtual canvas where visitors can let their problems slip away while effortlessly creating beautiful, flowing designs."
+        "description": "Weavesilk is a therapeutic and relaxing digital art platform that offers users a serene and calming experience. It provides a virtual canvas where visitors can let their problems slip away while effortlessly creating beautiful, flowing designs."
     }
 }
 

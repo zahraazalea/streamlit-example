@@ -1,4 +1,6 @@
 import streamlit as st
+from textblob import TextBlob
+
 
 # Page configuration
 st.set_page_config(page_title="Mental Health Support", page_icon=":mortar_board:")
@@ -6,6 +8,13 @@ st.set_page_config(page_title="Mental Health Support", page_icon=":mortar_board:
 # Website title and description
 st.title("Covid-19 Endemic Phase Mental Health Support Websites")
 st.markdown("This website provides resources and support for people facing challenges during the Covid-19 endemic phase.")
+
+additional_link = {
+    "Link": "https://www.who.int/teams/mental-health-and-substance-use/mental-health-and-covid-19",
+    "Description": "Here's some information about mental health and its correlation to Covid-19."
+}
+
+st.markdown(f"**[{additional_link['Description']}]({additional_link['Link']})**")
 
 # Section: Mental Health Support Websites
 st.header("Mental Health Support Websites")
@@ -48,6 +57,50 @@ additional_websites = {
 for name, data in additional_websites.items():
     st.markdown(f"**[{name}]({data['link']})**")
     st.write(data["description"])
+
+# Collect User Feedback
+feedback = st.text_area("Please provide your feedback:")
+
+# Perform Sentiment Analysis
+if feedback:
+    analysis = TextBlob(feedback)
+    sentiment = analysis.sentiment.polarity
+
+    # Display Sentiment Analysis Results
+    st.write("Sentiment Analysis Results:")
+    st.write(f"Feedback: {feedback}")
+    st.write(f"Sentiment Score: {sentiment:.2f}")
+
+    # Analyze sentiment label
+    if sentiment > 0:
+        st.write("Sentiment: Positive")
+    elif sentiment < 0:
+        st.write("Sentiment: Negative")
+    else:
+        st.write("Sentiment: Neutral")
+else:
+    st.write("Please provide your feedback.")
+
+# # Define image data with descriptions
+# images = [
+#     {
+#         "url": "https://example.com/image1.jpg",
+#         "description": "Image 1 description"
+#     },
+#     {
+#         "url": "https://example.com/image2.jpg",
+#         "description": "Image 2 description"
+#     },
+#     {
+#         "url": "https://example.com/image3.jpg",
+#         "description": "Image 3 description"
+#     }
+# ]
+
+# # Display images with descriptions
+# for image in images:
+#     st.image(image["url"], use_column_width=True)
+#     st.write(image["description"])
 
 # Footer
 st.markdown("---")
